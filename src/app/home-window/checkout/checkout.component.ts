@@ -1,17 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { first } from 'rxjs/operators';
-
-import { User } from '../models';
-import { UserService } from '../services';
+import { User } from 'src/app/models';
+import {AuthenticationService, UserService} from 'src/app/services';
 import {CookieService} from 'ngx-cookie-service';
-import { AlertService, AuthenticationService } from '../services';
 
 @Component({
-  selector: 'app-home-window',
-  templateUrl: './home-window.component.html',
-  styleUrls: ['./home-window.component.css']
+  selector: 'app-checkout',
+  templateUrl: './checkout.component.html',
+  styleUrls: ['./checkout.component.css']
 })
-export class HomeWindowComponent implements OnInit {
+export class CheckoutComponent implements OnInit {
 
   currentUser: User;
   users: User[] = [];
@@ -26,18 +23,12 @@ export class HomeWindowComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.loadAllUsers();
   }
-
   logout() {
     this.authenticationService.logout();
   }
   refresh() {
     window.location.reload();
   }
-  /*private loadAllUsers() {
-    this.userService.getAll().pipe(first()).subscribe(users => {
-      this.users = users;
-    });
-  }*/
+
 }

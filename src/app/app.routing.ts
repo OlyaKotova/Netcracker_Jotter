@@ -8,6 +8,7 @@ import {Collection1Component} from './home-window/collection1/collection1.compon
 import {Collection2Component} from './home-window/collection2/collection2.component';
 import {Collection3Component} from './home-window/collection3/collection3.component';
 import {CartWindowComponent} from './home-window/cart-window/cart-window.component';
+import { CheckoutComponent } from './home-window/checkout/checkout.component';
 
 
 const appRoutes: Routes = [
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
   { path: 'collection-2', component: Collection2Component },
   { path: 'collection-3', component: Collection3Component },
   { path: 'cart', component: CartWindowComponent },
+  { path: 'check', component: CheckoutComponent },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }

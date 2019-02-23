@@ -20,34 +20,38 @@
   <div id="col-1" *ngIf="!((this.currCart).indexOf(1) == -1)">
     <img class="image" src="assets/cart/col-1.png" alt="col-1">
     <div class="info">
-      <h5>Planner Updated/Dated Black Edition</h5>
+      <h5>PLANNER UPDATED/DATED BLACK EDITION</h5>
       <h5 *ngIf="amt1 != 1">x{{amt1}}</h5>
       <h3>$20.50</h3>
-      <button (click)="delete(1)">DELETE</button>
+      <button class="delete" (click)="delete(1)">DELETE</button>
     </div>
   </div>
   <div id="col-2" *ngIf="!((this.currCart).indexOf(2) == -1)">
     <img class="image" src="assets/cart/col-2.png" alt="col-1">
     <div class="info">
-      <h5>Planner Updated/Dated White Edition</h5>
+      <h5>PLANNER UPDATED/DATED WHITE EDITION</h5>
       <h5 *ngIf="amt2 != 1">x{{amt2}}</h5>
       <h3>$19.50</h3>
-      <button (click)="delete(2)">DELETE</button>
+      <button class="delete" (click)="delete(2)">DELETE</button>
     </div>
   </div>
   <div id="col-3" *ngIf="!((this.currCart).indexOf(3) == -1)">
     <img class="image" src="assets/cart/col-3.png" alt="col-1">
     <div class="info">
-      <h5>Planner Updated/Dated Blue Edition</h5>
+      <h5>PLANNER UPDATED/DATED BLUE EDITION</h5>
       <h5 *ngIf="amt3 != 1">x{{amt3}}</h5>
       <h3>$21.50</h3>
-      <button (click)="delete(3)">DELETE</button>
+      <button class="delete" (click)="delete(3)">DELETE</button>
     </div>
   </div>
   <hr id="line"/>
   <div class="headline">
-    <a id="my-total">TOTAL</a>
-    <h5>Sub-total: ${{subTotal}}</h5>
+    <h4>TOTAL</h4>
+    <div class = "total">
+      <h5>Sub-total: ${{subTotal}}</h5>
+      <h5>Delivery: FREE</h5>
+    </div>
+    <button class = "total" [routerLink]="['/check']">CHECKOUT</button>
   </div>
 </div>
 <div class="bot-pic-title">
