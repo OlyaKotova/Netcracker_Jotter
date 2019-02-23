@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Jotter</title>
+  </head>
+  <body>
+  <header>
+    <img id="main-title" src="assets/home/logo.png" alt="logo" [routerLink]="['/home']">
+    <nav id="menu">
+      <a>Shop</a>
+      <a >Help</a>
+      <a *ngIf="currentUser" (click)=logout() [routerLink]="['/home']">Logout</a>
+      <a *ngIf="!currentUser" [routerLink]="['/login']">Login</a>
+    </nav>
+    <a id="hello" *ngIf="currentUser" >Hi, {{currentUser.firstName}}!</a>
+    <img id="cart" *ngIf="currentUser" src="assets/home/cart.png" alt="cart" [routerLink]="['/cart']">
+  </header>
+  <section>
+    <img id="image" src="assets/collection/col-1-example.png" alt="col-1">
+    <div id="info">
+      <h3>2019 Planner Updated/Dated Black Edition</h3>
+      <h3 id="main-price" >$20.50  <s> $25.50 </s></h3>
+      <h6>The perfect planner for filling in your everyday appointments, thoughts and more! This package contains high quality, smooth papers and divider Inserts.</h6>
+      <button  (click)="addToCart()">ADD TO CART</button>
+      <div id="message-cart">{{clickMessage}}</div>
+    </div>
+  </section>
+  <div class="bot-pic-title">
+    <h1 class="bot-title-1" >For every planner purchased, </h1>
+    <h1 class="bot-title-2">we give one to someone in need</h1>
+  </div>
+  <div id="bot">
+    <div id="social">
+      <a href="https://gmail.com" id="soc-1"><img src="assets/home/gmail.png" width="50" height="50" alt="gmail"></a>
+      <a href="https://www.facebook.com/" id="soc-2"><img src="assets/home/facebook.png"  width="50" height="50" alt="facebook"></a>
+      <a href="https://instagram.com" id="soc-3"><img src="assets/home/instagram.png" width="50" height="50" alt="instagram"></a>
+      <a href="https://twitter.com" id="soc-4"><img src="assets/home/twitter.png" width="50" height="50" alt="twitter"></a>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+html {
+  margin: -8px;
+  font-family: HelveticaNeueCyr, serif;
+  letter-spacing: 3px;
+}
+#background {
+  margin: -8px;
+  position: fixed;
+  top:-50%;
+  left:-50%;
+  width:200%;
+  height:200%;
+}
+img {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:auto;
+  min-width:50%;
+  min-height:50%;
+}
+#login-form {
+  position: relative;
+  background: #ffffff;
+  margin: 0 auto;
+  margin-top: 30vh;
+  color: #717171;
+  width: 45vh;
+  height: 10%;
+  border-radius: 4px;
+  padding: 2%;
+}
+a {
+  text-decoration: none;
+  color: #924e8f;
+ }
+a:hover {
+  color: #717171;
+}
+a:visited {
+  text-decoration: none;
+  color: #924e8f;
+}
+#message {
+  margin-top: 7%;
+  letter-spacing: 1px;
+}
+#fields {
+  text-align: center;
+  margin-top: 5%;
+}
+.field {
+  margin: 0 0 10% 0;
+}
+button {
+  background-color: #c3c3c3;
+  border: 0;
+  width: 45%;
+  height: 45px;
+  margin-right: 8%;
+  color: white;
+  letter-spacing: 3px;
+  font-size: 15px;
+  font-weight: bold;
+}
+label {
+  margin-right: 5%;
+  text-transform: uppercase;
+}
+input {
+  height: 20px;
+}
