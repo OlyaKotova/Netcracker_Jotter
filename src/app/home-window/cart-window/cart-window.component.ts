@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models';
 import {AuthenticationService, UserService} from 'src/app/services';
 import {CookieService} from 'ngx-cookie-service';
-import {type} from 'os';
+
 
 @Component({
   selector: 'app-cart-window',

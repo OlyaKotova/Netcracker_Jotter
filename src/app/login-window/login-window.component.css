@@ -1,6 +1,6 @@
 html {
   margin: -8px;
-  font-family: HelveticaNeueCyr, serif;
+  font-family: 'Helvetica';
   letter-spacing: 3px;
 }
 #background {
@@ -27,7 +27,7 @@ img {
   margin: 0 auto;
   margin-top: 30vh;
   color: #717171;
-  width: 45vh;
+  width: 60vh;
   height: 10%;
   border-radius: 4px;
   padding: 2%;
@@ -35,7 +35,7 @@ img {
 a {
   text-decoration: none;
   color: #924e8f;
- }
+}
 a:hover {
   color: #717171;
 }
