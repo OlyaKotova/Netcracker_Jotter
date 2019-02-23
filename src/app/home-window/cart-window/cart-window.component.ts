@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models';
 import {AuthenticationService, UserService} from 'src/app/services';
 import {CookieService} from 'ngx-cookie-service';
-import {type} from 'os';
+
 
 @Component({
   selector: 'app-cart-window',
@@ -57,6 +57,7 @@ export class CartWindowComponent implements OnInit {
     console.log(this.index);
     (this.currCart).splice(quantity, 1);
     this.currentUser = JSON.parse(this.cookieService.get('currentUser'));
+    console.log((this.currentUser)['cart']);
     //console.log('111  ' + typeof(this.currentUser['cart']));
     //this.currentUser['cart'] = this.currCart;
     this.cookieService.get('currentUser');
