@@ -1,6 +1,6 @@
 html {
   margin: -8px;
-  font-family: HelveticaNeueCyr, serif;
+  font-family: 'Helvetica';
   letter-spacing: 3px;
 }
 header {
@@ -14,6 +14,7 @@ header img,
 header nav {
   vertical-align: middle;
   display: inline-block;
+
 }
 header img {
   height: 98%;
@@ -26,7 +27,6 @@ header::after {
   width: 100%;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: HelveticaNeueCyr, serif;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -111,7 +111,6 @@ nav a:hover {
 }
 .bot-pic {
   margin: 90px -8px 0px -8px;
-
 }
 #bot-title-1 {
   padding: 10% 0 0 0;

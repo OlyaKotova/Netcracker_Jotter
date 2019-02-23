@@ -1,6 +1,6 @@
 html {
   margin: -8px;
-  font-family: HelveticaNeueCyr, serif;
+  font-family: 'Helvetica';
   letter-spacing: 3px;
 }
 header {
@@ -26,7 +26,6 @@ header::after {
   width: 100%;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: HelveticaNeueCyr, serif;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -99,20 +98,20 @@ button {
   font-weight: bold;
 }
 .bot-pic {
-  height: 100%;
-  width: 100%;
+  margin: 90px -8px 0px -8px;
 }
-.bot-title-1 {
+#bot-title-1 {
+  padding: 10% 0 0 0;
+  margin-bottom: 3%;
   margin-right: 180px;
-  color: #65195d;
-  font-size: 40px;
-  padding: 140px 0 0 0;
 }
-.bot-title-2 {
+#bot-title-2 {
+  padding: 0 0 10% 0;
   margin-left: 180px;
+}
+.bot-title {
   color: #65195d;
-  font-size: 40px;
-  padding: 0 0 140px 0;
+  font-size: 35px;
 }
 .bot-pic-title {
   background-image: url("../pic/bot-pic.png");
@@ -121,7 +120,7 @@ button {
   background-size: 100%;
   align-items: center;
   text-align: center;
-  height: 400px;
+  height: 30%;
 }
 #bot {
   height: 50px;
