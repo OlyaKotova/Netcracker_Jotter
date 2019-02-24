@@ -112,6 +112,12 @@ button {
   color: #924e8f;
   letter-spacing: 1px;
 }
+#message{
+  font-weight: bold;
+  color: #65195d;
+  margin-top: 25px;
+  text-transform: uppercase;
+}
 .bot-pic {
   margin: 90px -8px 0px -8px;
 }

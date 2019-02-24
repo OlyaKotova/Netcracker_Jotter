@@ -12,7 +12,6 @@ import { CheckoutComponent } from './home-window/checkout/checkout.component';
 
 
 const appRoutes: Routes = [
-  //{ path: '', component: HomeWindowComponent, canActivate: [AuthGuard] },
   { path: '', component: HomeWindowComponent},
   { path: 'login', component: LoginWindowComponent },
   { path: 'register', component: RegistrationWindowComponent },
@@ -21,8 +20,6 @@ const appRoutes: Routes = [
   { path: 'collection-3', component: Collection3Component },
   { path: 'cart', component: CartWindowComponent },
   { path: 'check', component: CheckoutComponent },
-
-  // otherwise redirect to home
   { path: '**', redirectTo: '' }
 ];
 

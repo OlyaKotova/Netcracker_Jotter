@@ -36,12 +36,11 @@ export class CheckoutComponent implements OnInit {
     this.checkoutForm = this.formBuilder.group({
       fullName: ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z]+$')])],
       email: ['', Validators.compose([Validators.required, Validators.email])],
-      address: ['', Validators.required],
       zip: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6), Validators.pattern('^[0-9]+$')]],
       nameCard: ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z]+$')])],
       card: ['', Validators.compose(
         [Validators.required, Validators.minLength(16), Validators.maxLength(16), Validators.pattern('^[0-9]+$')])],
-      monthYear: ['', Validators.compose([Validators.required, Validators.pattern('^(0?[1-9]|1[012])/(1?9|2[1-5])$')])],
+      monthYear: ['', Validators.compose([Validators.required, Validators.pattern('^(0?[1-9]|1[0-2])/(1?9|2[0-5])$')])],
       cvv: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(3)]]
     });
   }
@@ -50,9 +49,9 @@ export class CheckoutComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     if (this.checkoutForm.invalid) {
+      this.message = '';
       return;
     }
-    this.router.navigate(['/login']);
     this.message = 'Done!';
   }
   logout() {

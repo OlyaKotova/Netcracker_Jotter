@@ -31,7 +31,6 @@ export class CartWindowComponent implements OnInit {
     if (this.cookieService.get('currentUser')) {
       this.currentUser = JSON.parse(this.cookieService.get('currentUser'));
       this.currCart = this.currentUser['cart'];
-      console.log(this.currCart);
       for (let i = 0; i < this.currCart.length; i++) {
         if (this.currCart[i] === 1) {
           this.subTotal += 20.50;
