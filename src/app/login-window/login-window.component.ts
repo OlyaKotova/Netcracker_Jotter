@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { CookieService } from 'ngx-cookie-service';
 
-import { AlertService, AuthenticationService } from '../services';
+import { AuthenticationService } from '../services';
 
 @Component({
   selector: 'app-login-window',
@@ -24,7 +24,6 @@ export class LoginWindowComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private alertService: AlertService,
     private cookieService: CookieService) {}
 
   ngOnInit() {

@@ -26,14 +26,7 @@ export class Collection1Component implements OnInit {
       this.currentUser = JSON.parse(this.cookieService.get('currentUser'));
     }
   }
-
   ngOnInit() {
-    this.loadAllUsers();
-  }
-  private loadAllUsers() {
-    this.userService.getAll().pipe(first()).subscribe(users => {
-      this.users = users;
-    });
   }
   logout() {
     this.authenticationService.logout();

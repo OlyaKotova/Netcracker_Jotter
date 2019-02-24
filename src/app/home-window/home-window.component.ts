@@ -4,7 +4,7 @@ import { first } from 'rxjs/operators';
 import { User } from '../models';
 import { UserService } from '../services';
 import {CookieService} from 'ngx-cookie-service';
-import { AlertService, AuthenticationService } from '../services';
+import { AuthenticationService } from '../services';
 
 @Component({
   selector: 'app-home-window',

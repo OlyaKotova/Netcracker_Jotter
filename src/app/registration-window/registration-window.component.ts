@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AlertService, UserService } from '../services';
+import { UserService } from '../services';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,7 +15,6 @@ export class RegistrationWindowComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private alertService: AlertService,
     private router: Router
   ) {
   }

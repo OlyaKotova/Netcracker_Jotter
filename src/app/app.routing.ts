@@ -1,9 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
-
 import { LoginWindowComponent } from './login-window/login-window.component';
 import { RegistrationWindowComponent } from './registration-window/registration-window.component';
 import {HomeWindowComponent} from './home-window/home-window.component';
-import { AuthGuard } from './guards';
 import {Collection1Component} from './home-window/collection1/collection1.component';
 import {Collection2Component} from './home-window/collection2/collection2.component';
 import {Collection3Component} from './home-window/collection3/collection3.component';
