@@ -51,7 +51,7 @@
       <h5>Sub-total: ${{subTotal}}</h5>
       <h5>Delivery: FREE</h5>
     </div>
-    <button class = "total" [routerLink]="['/check']">CHECKOUT</button>
+    <button class = "total" (click)="check(subTotal)" [routerLink]="['/check']">CHECKOUT</button>
   </div>
 </div>
 <div class="bot-pic-title">

@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { AlertService, UserService } from '../services';
-
-import {first} from 'rxjs/operators';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-registration-window',
@@ -14,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class RegistrationWindowComponent implements OnInit {
   registerForm: FormGroup;
-  loading = false;
   submitted = false;
 
   constructor(
@@ -37,28 +32,11 @@ export class RegistrationWindowComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-
-    // stop here if form is invalid
     if (this.registerForm.invalid) {
       return;
     }
-
     this.userService.register(this.registerForm.value);
-    this.alertService.success('Registration successful', true);
     this.router.navigate(['/login']);
-
-
-    /*this.userService.register(this.registerForm.value)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.alertService.success('Registration successful', true);
-          this.router.navigate(['/login']);
-        },
-        error => {
-          this.alertService.error(error);
-          this.loading = false;
-        });*/
   }
 
 }
