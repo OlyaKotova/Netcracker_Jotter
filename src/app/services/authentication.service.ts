@@ -14,5 +14,6 @@ export class AuthenticationService {
 
   logout() {
     this.cookieService.delete('currentUser');
+    this.cookieService.delete('subTotal');
   }
 }
