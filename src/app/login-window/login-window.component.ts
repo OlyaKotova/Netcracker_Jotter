@@ -8,12 +8,11 @@ import Backendless from 'backendless';
 @Component({
   selector: 'app-login-window',
   templateUrl: './login-window.component.html',
-  styleUrls: ['./login-window.component.css']
+  styleUrls: ['./login-window.component.less']
 })
 export class LoginWindowComponent implements OnInit {
 
   loginForm: FormGroup;
-  loading = false;
   submitted = false;
   returnUrl: string;
   clickMessage = '';

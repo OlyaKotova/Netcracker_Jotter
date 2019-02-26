@@ -7,7 +7,7 @@ import { AuthenticationService } from '../services';
 @Component({
   selector: 'app-home-window',
   templateUrl: './home-window.component.html',
-  styleUrls: ['./home-window.component.css']
+  styleUrls: ['./home-window.component.less']
 })
 export class HomeWindowComponent implements OnInit {
 
@@ -24,7 +24,6 @@ export class HomeWindowComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.loadAllUsers();
   }
 
   logout() {
@@ -33,9 +32,5 @@ export class HomeWindowComponent implements OnInit {
   refresh() {
     window.location.reload();
   }
-  /*private loadAllUsers() {
-    this.userService.getAll().pipe(first()).subscribe(users => {
-      this.users = users;
-    });
-  }*/
+
 }

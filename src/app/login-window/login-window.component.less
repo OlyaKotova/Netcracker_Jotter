@@ -1,6 +1,12 @@
+@color_1: #717171;
+@color_2: #924e8f;
+@color_3: white;
+@font_family_1: 'Helvetica';
+@background_color_1: #c3c3c3;
+
 html {
   margin: -8px;
-  font-family: 'Helvetica';
+  font-family: @font_family_1;
   letter-spacing: 3px;
 }
 #background {
@@ -26,7 +32,7 @@ img {
   background: #ffffff;
   margin: 0 auto;
   margin-top: 30vh;
-  color: #717171;
+  color: @color_1;
   width: 40vh;
   height: 10%;
   border-radius: 4px;
@@ -34,14 +40,14 @@ img {
 }
 a {
   text-decoration: none;
-  color: #924e8f;
-}
-a:hover {
-  color: #717171;
-}
-a:visited {
-  text-decoration: none;
-  color: #924e8f;
+  color: @color_2;
+  &:hover {
+    color: @color_1;
+  }
+  &:visited {
+    text-decoration: none;
+    color: @color_2;
+  }
 }
 #message {
   margin-top: 7%;
@@ -59,12 +65,12 @@ a:visited {
   margin: 0 0 10% 0;
 }
 button {
-  background-color: #c3c3c3;
+  background-color: @background_color_1;
   border: 0;
   width: 45%;
   height: 45px;
   margin-right: 8%;
-  color: white;
+  color: @color_3;
   letter-spacing: 3px;
   font-size: 15px;
   font-weight: bold;
@@ -76,4 +82,3 @@ label {
 input {
   height: 20px;
 }
-/*# sourceMappingURL=login-window.component.css.map */
