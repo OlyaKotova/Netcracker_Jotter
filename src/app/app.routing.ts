@@ -7,6 +7,7 @@ import {Collection2Component} from './home-window/collection2/collection2.compon
 import {Collection3Component} from './home-window/collection3/collection3.component';
 import {CartWindowComponent} from './home-window/cart-window/cart-window.component';
 import { CheckoutComponent } from './home-window/checkout/checkout.component';
+import { InfoUserComponent } from './home-window/info-user/info-user.component';
 
 
 const appRoutes: Routes = [
@@ -18,6 +19,7 @@ const appRoutes: Routes = [
   { path: 'collection-3', component: Collection3Component },
   { path: 'cart', component: CartWindowComponent },
   { path: 'check', component: CheckoutComponent },
+  { path: 'user', component: InfoUserComponent },
   { path: '**', redirectTo: '' }
 ];
 

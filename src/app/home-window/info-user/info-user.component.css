@@ -2,6 +2,7 @@ html {
   margin: -8px;
   font-family: 'Helvetica';
   letter-spacing: 3px;
+  background-color: #ececec;
 }
 header {
   height: 80px;
@@ -14,6 +15,7 @@ header img,
 header nav {
   vertical-align: middle;
   display: inline-block;
+
 }
 header img {
   height: 98%;
@@ -27,7 +29,6 @@ header::after {
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  text-transform: uppercase;
   letter-spacing: 1px;
 }
 nav {
@@ -40,9 +41,10 @@ nav a {
   text-transform: uppercase;
   color: #fff;
   text-decoration: none;
-}
-header a {
 
+}
+nav a:hover {
+  color: #5b5b5b;
 }
 #hello {
   text-decoration: none;
@@ -53,9 +55,6 @@ header a {
 }
 #hello:hover {
   color: #989898;
-}
-nav a:hover {
-  color: #5b5b5b;
 }
 #main-title {
   margin-left: 5%;
@@ -69,43 +68,24 @@ nav a:hover {
 }
 #hello {
   text-transform: uppercase;
-  margin-left: 40px;
 }
-
-#image, #info {
-  display: inline-block;
-  vertical-align: top;
-  width: 100%;
+#profile {
+  margin: 5% auto;
+  padding: 5%;
+  width: 40%;
+  background-color: #ffffff;
+  border-radius: 1%;
 }
-#image {
-  max-width:60%;
-  margin: 0 0 -27px -8px;
+#photo {
+  height: 300px;
 }
 #info {
-  width: 30%;
-  margin: 50px 50px 30px 50px;
-  line-height: 30px;
+  margin-left: 10%;
+  color: #28282c;
 }
-#main-price {
-  font-size: 25px;
-  letter-spacing: 2px;
-}
-#message-cart{
-  font-weight: bold;
-  color: #65195d;
-  margin-top: 25px;
-  text-transform: uppercase;
-}
-button {
-  background-color: #c3c3c3;
-  border: 0;
-  width: 190px;
-  height: 45px;
-  margin-right: 8%;
-  color: white;
-  letter-spacing: 3px;
-  font-size: 15px;
-  font-weight: bold;
+#photo, #info {
+  display: inline-block;
+  vertical-align: top;
 }
 .bot-pic {
   margin: 90px -8px 0px -8px;
@@ -146,7 +126,7 @@ button {
 #soc-1, #soc-2, #soc-3, #soc-4 {
   margin-right: 30px;
 }
-#social  {
+#social, #subscribe, #button  {
   display: inline-block;
 }
 

@@ -11,7 +11,7 @@
     <a *ngIf="currentUser" (click)=logout() [routerLink]="['/home']">Logout</a>
     <a *ngIf="!currentUser" [routerLink]="['/login']">Login</a>
   </nav>
-  <a id="hello" *ngIf="currentUser">Hi, {{currentUser.firstName}}!</a>
+  <a id="hello" *ngIf="currentUser" [routerLink]="['/user']">Hi, {{currentUser.firstName}}!</a>
   <img id="cart" *ngIf="currentUser" src="assets/home/cart.png" alt="cart" [routerLink]="['/cart']">
 </header>
 <div id="check-form">

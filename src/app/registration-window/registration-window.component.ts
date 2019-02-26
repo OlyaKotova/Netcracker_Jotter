@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../services';
 import { Router } from '@angular/router';
+import Backendless from 'backendless';
 
 @Component({
   selector: 'app-registration-window',

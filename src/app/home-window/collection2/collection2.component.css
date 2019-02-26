@@ -48,6 +48,16 @@ header a {
 nav a:hover {
   color: #5b5b5b;
 }
+#hello {
+  text-decoration: none;
+}
+#hello:visited {
+  text-decoration: none;
+  color: white;
+}
+#hello:hover {
+  color: #989898;
+}
 #main-title {
   margin-left: 5%;
 }

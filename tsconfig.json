@@ -10,6 +10,8 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
+    "removeComments": false,
+    "noImplicitAny": false,
     "target": "es5",
     "typeRoots": [
       "node_modules/@types"
@@ -18,5 +20,10 @@
       "es2018",
       "dom"
     ]
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "typings/main",
+    "typings/main.d.ts"
+  ]
 }

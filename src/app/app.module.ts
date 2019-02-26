@@ -13,6 +13,36 @@ import { CartWindowComponent } from './home-window/cart-window/cart-window.compo
 import { Collection2Component } from './home-window/collection2/collection2.component';
 import { Collection3Component } from './home-window/collection3/collection3.component';
 import { CheckoutComponent } from './home-window/checkout/checkout.component';
+import { InfoUserComponent } from './home-window/info-user/info-user.component';
+import Backendless from 'backendless';
+
+
+const APP_ID = '3B06F43D-77A8-C56F-FF8E-08BE2ED21600';
+const API_KEY = 'CFAC3095-240A-FCC7-FF86-F3379E8B4900';
+
+Backendless.serverURL = 'https://api.backendless.com';
+Backendless.initApp(APP_ID, API_KEY);
+
+const pass = "password LIKE 'vvvvvvvvv'";
+const user = "username LIKE 'vvvvvvvvv'";
+const queryBuilder = Backendless.DataQueryBuilder.create().setWhereClause(pass);
+const queryBuilder1 = Backendless.DataQueryBuilder.create().setWhereClause(user);
+Backendless.Data.of('UserList').find(queryBuilder)
+  .then( function( foundContacts ) {
+    console.log (foundContacts);
+  })
+  .catch( function( fault ) {
+    // an error has occurred, the error code can be retrieved with fault.statusCode
+  });
+
+Backendless.Data.of('UserList').find(queryBuilder1)
+  .then( function( foundContacts ) {
+    console.log (foundContacts);
+  })
+  .catch( function( fault ) {
+    // an error has occurred, the error code can be retrieved with fault.statusCode
+  });
+
 
 @NgModule({
   declarations: [
@@ -24,7 +54,8 @@ import { CheckoutComponent } from './home-window/checkout/checkout.component';
     CartWindowComponent,
     Collection2Component,
     Collection3Component,
-    CheckoutComponent
+    CheckoutComponent,
+    InfoUserComponent
   ],
   imports: [
     BrowserModule,

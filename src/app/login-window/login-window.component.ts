@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { first } from 'rxjs/operators';
 import { CookieService } from 'ngx-cookie-service';
-
 import { AuthenticationService } from '../services';
+import Backendless from 'backendless';
 
 @Component({
   selector: 'app-login-window',
@@ -31,20 +30,14 @@ export class LoginWindowComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
-
-    // reset login status
     this.authenticationService.logout();
-
-    // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
-  // convenience getter for easy access to form fields
   get f() { return this.loginForm.controls; }
 
   onSubmit() {
     this.submitted = true;
-
     if (this.loginForm.invalid) {
       return;
     }
@@ -58,23 +51,10 @@ export class LoginWindowComponent implements OnInit {
           this.authenticationService.login(listUser[i]);
           this.router.navigate([this.returnUrl]);
           return;
+        } else {
+          this.clickMessage = 'Oops! Looks like either your email address or password were incorrect. Wanna try again or register?';
         }
       }
-    } else {
-      this.clickMessage = 'Oops! Looks like either your email address or password were incorrect. Wanna try again or register?';
     }
-    //console.log(Object.values(listUser["1"]));
-
-
-    /*this.authenticationService.login(this.f.username.value, this.f.password.value)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          this.alertService.error(error);
-          this.loading = false;
-        });*/
   }
 }

@@ -2,7 +2,6 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Jotter</title>
-  <script src="//api.backendless.com/sdk/js/latest/backendless.js"></script>
 </head>
 <body>
 <header>
@@ -16,27 +15,15 @@
   <a id="hello" *ngIf="currentUser" [routerLink]="['/user']">Hi, {{currentUser.firstName}}!</a>
   <img id="cart" *ngIf="currentUser" src="assets/home/cart.png" alt="cart" [routerLink]="['/cart']">
 </header>
-<img id="main-pic" src="assets/home/main-plan.png" alt="main-plan">
-<section id="ex1">
-  <h1 id="title-collection" class="title-hover">Collections</h1>
-  <div id="all-collections">
-    <div class= "col-123" [routerLink]="['/collection-1']">
-      <img class="mini-logo-col" src="assets/home/col-1.png" alt="col-1">
-      <h3 class="desc-mini-logo">2019 updated/dated</h3>
-      <img class="example-col" src="assets/home/col-1-example.png" alt="col-1">
-    </div>
-    <div class= "col-123" [routerLink]="['/collection-2']">
-      <img class="mini-logo-col" src="assets/home/col-2.png" alt="col-2">
-      <h3 class="desc-mini-logo">academic</h3>
-      <img class="example-col" src="assets/home/col-2-example.png" alt="col-2">
-    </div>
-    <div class= "col-123" [routerLink]="['/collection-3']">
-      <img class="mini-logo-col" src="assets/home/col-3.png" alt="col-3">
-      <h3 class="desc-mini-logo">limited edition</h3>
-      <img class="example-col" src="assets/home/col-3-example.png" alt="col-3">
-    </div>
+<div id="profile">
+  <img id="photo" src="assets/home/no_image.png" alt="photo">
+  <div id="info">
+    <h4>First Name:  {{currentUser.firstName}}</h4>
+    <h4>Last Name:  {{currentUser.lastName}}</h4>
+    <h4>Login:  {{currentUser.username}}</h4>
+    <h4>Current Cart:  {{subTotal}}$</h4>
   </div>
-</section>
+</div>
 <section id="ex2">
   <div class="bot-pic-title">
     <h1 class="bot-title" id="bot-title-1">For every planner purchased, </h1>
@@ -53,5 +40,3 @@
 </section>
 </body>
 </html>
-
-
