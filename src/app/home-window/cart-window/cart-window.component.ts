@@ -14,7 +14,6 @@ export class CartWindowComponent implements OnInit {
 
   currentUser: User;
   users: User[] = [];
-  clickMessage = '';
   currCart: number[] = [];
   subTotal = 0;
   amt1 = 0;
@@ -28,6 +27,7 @@ export class CartWindowComponent implements OnInit {
     private cookieService: CookieService,
     private authenticationService: AuthenticationService,
     private router: Router) {
+    window.scrollTo(0, 0);
     if (this.cookieService.get('currentUser')) {
       this.currentUser = JSON.parse(this.cookieService.get('currentUser'));
       this.currCart = this.currentUser['cart'];
@@ -47,7 +47,6 @@ export class CartWindowComponent implements OnInit {
       }
     }
   }
-
   ngOnInit() {
   }
   logout() {

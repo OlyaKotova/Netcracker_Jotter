@@ -23,13 +23,15 @@ const API_KEY = 'CFAC3095-240A-FCC7-FF86-F3379E8B4900';
 Backendless.serverURL = 'https://api.backendless.com';
 Backendless.initApp(APP_ID, API_KEY);
 
-const pass = "password LIKE 'vvvvvvvvv'";
-const user = "username LIKE 'vvvvvvvvv'";
+/*const pass = "password LIKE 'vvvvvvvvv'";
+const user = "username LIKE 'kotova'";
+
 const queryBuilder = Backendless.DataQueryBuilder.create().setWhereClause(pass);
 const queryBuilder1 = Backendless.DataQueryBuilder.create().setWhereClause(user);
+
 Backendless.Data.of('UserList').find(queryBuilder)
   .then( function( foundContacts ) {
-    console.log (foundContacts);
+    console.log (foundContacts[0]);
   })
   .catch( function( fault ) {
     // an error has occurred, the error code can be retrieved with fault.statusCode
@@ -41,7 +43,7 @@ Backendless.Data.of('UserList').find(queryBuilder1)
   })
   .catch( function( fault ) {
     // an error has occurred, the error code can be retrieved with fault.statusCode
-  });
+  });*/
 
 
 @NgModule({

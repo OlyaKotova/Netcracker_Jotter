@@ -26,6 +26,7 @@ export class CheckoutComponent implements OnInit {
     private cookieService: CookieService,
     private authenticationService: AuthenticationService,
     private router: Router) {
+    window.scrollTo(0, 0);
     this.subTotal = JSON.parse(this.cookieService.get('subTotal'))
     if (this.cookieService.get('currentUser')) {
       this.currentUser = JSON.parse(this.cookieService.get('currentUser'));
