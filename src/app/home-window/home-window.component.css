@@ -72,6 +72,7 @@ nav a:hover {
 #hello {
   text-decoration: none;
   text-transform: uppercase;
+  color: white;
 }
 #hello:visited {
   text-decoration: none;

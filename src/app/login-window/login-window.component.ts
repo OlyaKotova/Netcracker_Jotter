@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthenticationService } from '../services';
 import Backendless from 'backendless';
+import {any} from 'codelyzer/util/function';
 
 @Component({
   selector: 'app-login-window',
@@ -16,8 +17,26 @@ export class LoginWindowComponent implements OnInit {
   submitted = false;
   returnUrl: string;
   clickMessage = '';
-  foundUser: [];
-  foundPass: [];
+  user: string;
+  pass: string;
+  foundUser: {
+    firstName: string,
+    lastName: string,
+    password: string,
+    username: string,
+  };
+  fieldOfUser: [{
+    firstName: string,
+    lastName: string,
+    password: string,
+    username: string,
+  }];
+  fieldOfPass: [{
+    firstName: string,
+    lastName: string,
+    password: string,
+    username: string,
+  }];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -46,48 +65,22 @@ export class LoginWindowComponent implements OnInit {
     const currUsername = this.f.username.value;
     const currPassword = this.f.password.value;
 
-    const pass = "password LIKE 'vvvvvvvvv'";
-    const user = "username LIKE 'kotova'";
+    this.user = "username LIKE '" + currUsername + "'";
+    this.pass = "password LIKE '" + currPassword + "'";
+    const queryBuilderUser = Backendless.DataQueryBuilder.create().setWhereClause(this.user);
+    const queryBuilderPass = Backendless.DataQueryBuilder.create().setWhereClause(this.pass);
 
-    const queryBuilder = Backendless.DataQueryBuilder.create().setWhereClause(pass);
-    const queryBuilder1 = Backendless.DataQueryBuilder.create().setWhereClause(user);
+    this.fieldOfUser = Backendless.Data.of( 'UserList').findSync(queryBuilderUser);
+    this.fieldOfPass = Backendless.Data.of( 'UserList').findSync(queryBuilderPass);
+    if (this.fieldOfUser[0].password === this.fieldOfPass[0].password) {
+      this.foundUser.firstName = this.fieldOfUser[0].firstName;
+      this.foundUser.lastName = this.fieldOfUser[0].lastName;
+      this.foundUser.password = this.fieldOfUser[0].password;
+      this.foundUser.username = this.fieldOfUser[0].username;
+      console.log(this.foundUser);
+      Backendless.Data.of('CurrUser').save(this.foundUser);
+    }
 
-    Backendless.Data.of('UserList').find(queryBuilder)
-      .then( function( foundContacts ) {
-        console.log (foundContacts[0]);
-      })
-      .catch( function( fault ) {
-        // an error has occurred, the error code can be retrieved with fault.statusCode
-      });
-
-    Backendless.Data.of('UserList').find(queryBuilder1)
-      .then( function( foundContacts ) {
-        console.log (foundContacts);
-      })
-      .catch( function( fault ) {
-        // an error has occurred, the error code can be retrieved with fault.statusCode
-      });
-    // const user = "username LIKE '" + currUsername + "'";
-    /*const pass = "password LIKE '" + currPassword + "'";
-    const user = "username LIKE 'kotova'";
-    const queryBuilderUser = Backendless.DataQueryBuilder.create().setWhereClause(user);
-    const queryBuilderPass = Backendless.DataQueryBuilder.create().setWhereClause(pass);
-    Backendless.Data.of('UserList').find(queryBuilderUser)
-      .then( function(foundContacts) {
-        this.foundUser = foundContacts;
-        console.log(foundContacts);
-      })
-      .catch( function(fault) {
-      });
-
-    Backendless.Data.of('UserList').find(queryBuilderPass)
-      .then( function(foundContacts) {
-        this.foundPass = foundContacts;
-        console.log(foundContacts);
-      })
-      .catch( function(fault) {
-      });*/
-    //console.log(JSON.stringify(this.foundUser) === JSON.stringify(this.foundPass));
 
     if (this.cookieService.get('users')) {
       const listUser = JSON.parse(this.cookieService.get('users'));
@@ -100,6 +93,8 @@ export class LoginWindowComponent implements OnInit {
           this.clickMessage = 'Oops! Looks like either your email address or password were incorrect. Wanna try again or register?';
         }
       }
+    } else {
+      this.clickMessage = 'Oops! Looks like either your email address or password were incorrect. Wanna try again or register?';
     }
   }
 }
