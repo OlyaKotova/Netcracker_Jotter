@@ -7,7 +7,7 @@ import {CookieService} from 'ngx-cookie-service';
 @Component({
   selector: 'app-collection1',
   templateUrl: './collection1.component.html',
-  styleUrls: ['./collection1.component.css']
+  styleUrls: ['./collection1.component.less']
 })
 export class Collection1Component implements OnInit {
 

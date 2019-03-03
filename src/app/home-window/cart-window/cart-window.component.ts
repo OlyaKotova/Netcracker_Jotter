@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-cart-window',
   templateUrl: './cart-window.component.html',
-  styleUrls: ['./cart-window.component.css']
+  styleUrls: ['./cart-window.component.less']
 })
 export class CartWindowComponent implements OnInit {
 

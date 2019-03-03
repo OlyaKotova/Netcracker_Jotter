@@ -7,7 +7,7 @@ import Backendless from 'backendless';
 @Component({
   selector: 'app-registration-window',
   templateUrl: './registration-window.component.html',
-  styleUrls: ['./registration-window.component.css']
+  styleUrls: ['./registration-window.component.less']
 })
 export class RegistrationWindowComponent implements OnInit {
   registerForm: FormGroup;

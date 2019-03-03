@@ -55,9 +55,9 @@ export class LoginWindowComponent implements OnInit {
     const fieldOfUser = Backendless.Data.of( 'UserList').findSync(queryBuilderUser);
     const fieldOfPass = Backendless.Data.of( 'UserList').findSync(queryBuilderPass);
     const foundUser = fieldOfUser;
-    console.log(foundUser[0]);
+    /*console.log(foundUser[0]);
     console.log(fieldOfUser[0]);
-    Backendless.Data.of('CurrUser').save(foundUser);
+    Backendless.Data.of('CurrUser').save(foundUser);*/
 
     if (this.cookieService.get('users')) {
       const listUser = JSON.parse(this.cookieService.get('users'));

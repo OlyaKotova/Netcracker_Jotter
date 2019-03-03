@@ -6,7 +6,7 @@ import {CookieService} from 'ngx-cookie-service';
 @Component({
   selector: 'app-collection3',
   templateUrl: './collection3.component.html',
-  styleUrls: ['./collection3.component.css']
+  styleUrls: ['./collection3.component.less']
 })
 export class Collection3Component implements OnInit {
   currentUser: User;

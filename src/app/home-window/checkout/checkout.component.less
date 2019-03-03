@@ -1,30 +1,40 @@
+@color_1: #fff;
+@color_2: #5b5b5b;
+@color_3: white;
+@color_4: #924e8f;
+@color_5: #65195d;
+@font_family_1: 'Helvetica';
+@background_color_1: #ffffff;
+@background_color_2: #ececec;
+@background_color_3: #dbdbdb;
+
 html {
   margin: -8px;
-  font-family: 'Helvetica';
+  font-family: @font_family_1;
   letter-spacing: 3px;
-  background-color: #ffffff;
+  background-color: @background_color_1;
 }
 header {
   height: 70px;
   margin: 0px -8px 0px -8px;
   padding: 10px 5px;
   background: #65195d;
-  color: #fff;
-}
-header img {
-  vertical-align: middle;
-  display: inline-block;
-  height: 100%;
-  margin-right: 5%;
-  margin-left: 5%;
-}
-header nav {
-  vertical-align: middle;
-  display: inline-block;
-}
-header::after {
-  display: inline-block;
-  width: 100%;
+  color: @color_1;
+  img {
+    vertical-align: middle;
+    display: inline-block;
+    height: 100%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+  nav {
+    vertical-align: middle;
+    display: inline-block;
+  }
+  &::after {
+    display: inline-block;
+    width: 100%;
+  }
 }
 h1 {
   font-weight: bold;
@@ -52,37 +62,37 @@ h6 {
 }
 nav {
   margin-right: 10%;
-}
-nav a {
-  font-weight: bold;
-  font-size: 20px;
-  padding-right: 8%;
-  text-transform: uppercase;
-  color: #fff;
-  text-decoration: none;
-}
-nav a:hover {
-  color: #5b5b5b;
+  a {
+    font-weight: bold;
+    font-size: 20px;
+    padding-right: 8%;
+    text-transform: uppercase;
+    color: @color_1;
+    text-decoration: none;
+    &:hover {
+      color: @color_2;
+    }
+  }
 }
 #cart {
   height: 35%;
-}
-#cart:hover {
-  height: 45%;
+  &:hover {
+    height: 45%;
+  }
 }
 #check-form {
   margin: 9% auto;
   width: 60%;
-  background-color: #ffffff;
+  background-color: @background_color_1;
 }
 #form-1 {
-  background-color: #ffffff;
+  background-color: @background_color_1;
   width: 40vh;
   display: inline-block;
   vertical-align: top;
 }
 #form-2 {
-  background-color: #ffffff;
+  background-color: @background_color_1;
   width: 40vh;
   display: inline-block;
   vertical-align: top;
@@ -92,7 +102,7 @@ nav a:hover {
 }
 #total {
   display: inline-block;
-  background-color: #ffffff;
+  background-color: @background_color_1;
   vertical-align: top;
   padding: 0 1%;
 }
@@ -101,15 +111,15 @@ nav a:hover {
   padding: 3%;
   margin: 6% 6% 0 4%;
   border: 0;
-  background-color: #ececec;
+  background-color: @background_color_2;
 }
 button {
-  background-color: #dbdbdb;
+  background-color: @background_color_3;
   border: 0;
   width: 20vh;
   height: 45px;
   margin-right: 8%;
-  color: white;
+  color: @color_3;
   letter-spacing: 3px;
   font-size: 15px;
   font-weight: bold;
@@ -117,12 +127,12 @@ button {
 .required {
   margin: 2% 5%;
   font-size: 12px;
-  color: #924e8f;
+  color: @color_4;
   letter-spacing: 1px;
 }
 #message {
   font-weight: bold;
-  color: #65195d;
+  color: @color_5;
   margin-top: 25px;
   text-transform: uppercase;
 }
@@ -139,7 +149,7 @@ button {
   margin-left: 180px;
 }
 .bot-title {
-  color: #65195d;
+  color: @color_5;
   font-size: 35px;
 }
 .bot-pic-title {
@@ -171,8 +181,10 @@ button {
   }
 }
 @media screen and (max-width: 1130px) {
-  nav a {
-    font-size: 15px;
+  nav {
+    a {
+      font-size: 15px;
+    }
   }
   #cart {
     height: 35px;
@@ -194,10 +206,10 @@ button {
     height: 50px;
   }
   nav {
+    a {
+      font-size: 10px;
+    }
     margin-right: 6%;
-  }
-  nav a {
-    font-size: 10px;
   }
   #shop {
     display: none;
@@ -224,4 +236,3 @@ button {
     font-size: 15px;
   }
 }
-/*# sourceMappingURL=checkout.component.css.map */

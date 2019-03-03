@@ -1,30 +1,37 @@
+@color_1: #fff;
+@color_2: #5b5b5b;
+@color_3: #65195d;
+@color_4: #28282c;
+@font_family_1: 'Helvetica';
+@background_color_1: #ffffff;
+
 html {
   margin: -8px;
-  font-family: 'Helvetica';
+  font-family: @font_family_1;
   letter-spacing: 3px;
-  background-color: #ffffff;
+  background-color: @background_color_1;
 }
 header {
   height: 70px;
   margin: 0px -8px 0px -8px;
   padding: 10px 5px;
   background: #65195d;
-  color: #fff;
-}
-header img {
-  vertical-align: middle;
-  display: inline-block;
-  height: 100%;
-  margin-right: 5%;
-  margin-left: 5%;
-}
-header nav {
-  vertical-align: middle;
-  display: inline-block;
-}
-header::after {
-  display: inline-block;
-  width: 100%;
+  color: @color_1;
+  img {
+    vertical-align: middle;
+    display: inline-block;
+    height: 100%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+  nav {
+    vertical-align: middle;
+    display: inline-block;
+  }
+  &::after {
+    display: inline-block;
+    width: 100%;
+  }
 }
 h1 {
   font-weight: bold;
@@ -52,23 +59,23 @@ h6 {
 }
 nav {
   margin-right: 15%;
-}
-nav a {
-  font-weight: bold;
-  font-size: 20px;
-  padding-right: 25%;
-  text-transform: uppercase;
-  color: #fff;
-  text-decoration: none;
-}
-nav a:hover {
-  color: #5b5b5b;
+  a {
+    font-weight: bold;
+    font-size: 20px;
+    padding-right: 25%;
+    text-transform: uppercase;
+    color: @color_1;
+    text-decoration: none;
+    &:hover {
+      color: @color_2;
+    }
+  }
 }
 #cart {
   height: 35%;
-}
-#cart:hover {
-  height: 45%;
+  &:hover {
+    height: 45%;
+  }
 }
 #main-pic {
   margin: 0px -8px 0px -8px;
@@ -77,13 +84,15 @@ nav a:hover {
 }
 #title-collection {
   text-align: center;
-  color: #65195d;
+  color: @color_3;
   font-size: 40px;
   padding: 50px;
   margin-bottom: 30px;
 }
-.title-hover:hover {
-  letter-spacing: 5px;
+.title-hover {
+  &:hover {
+    letter-spacing: 5px;
+  }
 }
 #all-collections {
   height: 400px;
@@ -101,18 +110,18 @@ nav a:hover {
   background: #e8e5e5;
   margin-left: 5%;
   margin-right: 5%;
-}
-.col-123:hover {
-  background: #c0c0c0;
+  &:hover {
+    background: #c0c0c0;
+  }
 }
 .mini-logo-col {
   margin-top: 20px;
 }
 .desc-mini-logo {
-  color: #28282c;
-}
-.desc-mini-logo:hover {
-  letter-spacing: 2px;
+  color: @color_4;
+  &:hover {
+    letter-spacing: 2px;
+  }
 }
 .example-col {
   margin: 10px 10px;
@@ -127,7 +136,7 @@ nav a:hover {
   margin-left: 180px;
 }
 .bot-title {
-  color: #65195d;
+  color: @color_3;
   font-size: 35px;
 }
 .bot-pic-title {
@@ -154,8 +163,10 @@ nav a:hover {
   height: 40px;
 }
 @media screen and (max-width: 1000px) {
-  nav a {
-    font-size: 15px;
+  nav {
+    a {
+      font-size: 15px;
+    }
   }
   #cart {
     height: 35px;
@@ -184,10 +195,10 @@ nav a:hover {
     height: 50px;
   }
   nav {
+    a {
+      font-size: 10px;
+    }
     margin-right: 6%;
-  }
-  nav a {
-    font-size: 10px;
   }
   #shop {
     display: none;
@@ -202,4 +213,3 @@ nav a:hover {
     font-size: 15px;
   }
 }
-/*# sourceMappingURL=home-window.component.css.map */

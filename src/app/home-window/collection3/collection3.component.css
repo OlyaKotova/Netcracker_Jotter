@@ -11,22 +11,42 @@ header {
   background: #65195d;
   color: #fff;
 }
-header img,
-header nav {
+header img {
   vertical-align: middle;
   display: inline-block;
-}
-header img {
   height: 100%;
   margin-right: 5%;
   margin-left: 5%;
 }
-
+header nav {
+  vertical-align: middle;
+  display: inline-block;
+}
 header::after {
   display: inline-block;
   width: 100%;
 }
-h1, h2, h3, h4, h5, h6 {
+h1 {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+h2 {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+h3 {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+h4 {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+h5 {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+h6 {
   font-weight: bold;
   letter-spacing: 2px;
 }
@@ -50,16 +70,17 @@ nav a:hover {
 #cart:hover {
   height: 45%;
 }
-#image, #info {
+#image {
   display: inline-block;
   vertical-align: top;
   width: 100%;
-}
-#image {
   max-width: 60%;
   margin: 0 -8px -23px -8px;
 }
 #info {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
   width: 30%;
   margin: 50px 50px 30px 50px;
   line-height: 30px;
@@ -68,7 +89,7 @@ nav a:hover {
   font-size: 25px;
   letter-spacing: 2px;
 }
-#message-cart{
+#message-cart {
   font-weight: bold;
   color: #65195d;
   margin-top: 25px;
@@ -134,8 +155,7 @@ button {
   #cart {
     height: 35px;
   }
-  .bot-title
-  {
+  .bot-title {
     font-size: 25px;
   }
 }
@@ -143,11 +163,11 @@ button {
   header {
     height: 50px;
   }
-  nav a {
-    font-size: 10px;
-  }
   nav {
     margin-right: 6%;
+  }
+  nav a {
+    font-size: 10px;
   }
   #shop {
     display: none;
@@ -158,8 +178,8 @@ button {
   button {
     height: 35px;
   }
-  .bot-title
-  {
+  .bot-title {
     font-size: 15px;
   }
 }
+/*# sourceMappingURL=collection3.component.css.map */

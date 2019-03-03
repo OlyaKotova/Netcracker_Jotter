@@ -6,57 +6,41 @@ html {
 }
 header {
   height: 70px;
-  margin: -2px -8px 0px -8px;
+  margin: 0px -8px 0px -8px;
   padding: 10px 5px;
   background: #65195d;
   color: #fff;
 }
-header img {
-  vertical-align: middle;
-  display: inline-block;
-  height: 100%;
-  margin-right: 5%;
-  margin-left: 5%;
-}
+header img,
 header nav {
   vertical-align: middle;
   display: inline-block;
+}
+header img {
+  height: 100%;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 header::after {
   display: inline-block;
   width: 100%;
 }
-h1 {
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-h2 {
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-h3 {
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-h4 {
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-h5 {
-  font-weight: bold;
-  letter-spacing: 2px;
-}
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
   font-weight: bold;
   letter-spacing: 2px;
 }
 nav {
-  margin-right: 10%;
+  margin-right: 15%;
 }
 nav a {
   font-weight: bold;
   font-size: 20px;
-  padding-right: 8%;
+  padding-right: 25%;
   text-transform: uppercase;
   color: #fff;
   text-decoration: none;
@@ -70,40 +54,52 @@ nav a:hover {
 #cart:hover {
   height: 45%;
 }
-#image {
-  display: inline-block;
-  vertical-align: top;
-  width: 100%;
-  max-width: 60%;
-  margin: 0 -8px -23px -8px;
+#main-pic {
+  margin: 0px -8px 0px -8px;
+  height: 100%;
+  width: 103%;
 }
-#info {
-  display: inline-block;
-  vertical-align: top;
-  width: 100%;
-  width: 30%;
-  margin: 50px 50px 30px 50px;
-  line-height: 30px;
+#title-collection {
+  text-align: center;
+  color: #65195d;
+  font-size: 40px;
+  padding: 50px;
+  margin-bottom: 30px;
 }
-#main-price {
-  font-size: 25px;
+.title-hover:hover {
+  letter-spacing: 5px;
+}
+#all-collections {
+  height: 400px;
+  background: #fff;
+  text-align: center;
+  position: relative;
+  margin-bottom: 110px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.col-123 {
+  height: 100%;
+  width: 300px;
+  background: #e8e5e5;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.col-123:hover {
+  background: #c0c0c0;
+}
+.mini-logo-col {
+  margin-top: 20px;
+}
+.desc-mini-logo {
+  color: #28282c;
+}
+.desc-mini-logo:hover {
   letter-spacing: 2px;
 }
-#message-cart {
-  font-weight: bold;
-  color: #65195d;
-  margin-top: 25px;
-  text-transform: uppercase;
-}
-button {
-  background-color: #c3c3c3;
-  border: 0;
-  width: 190px;
-  height: 45px;
-  color: white;
-  letter-spacing: 3px;
-  font-size: 15px;
-  font-weight: bold;
+.example-col {
+  margin: 10px 10px;
 }
 #bot-title-1 {
   padding: 10% 0 0 0;
@@ -119,8 +115,9 @@ button {
   font-size: 35px;
 }
 .bot-pic-title {
-  background-image: url("../pic/bot-pic.png");
-  margin: 0 -8px 0 -8px;
+  background-image: url("pic/bot-pic.png");
+  margin-left: -8px;
+  margin-right: -8px;
   background-size: 110%;
   align-items: center;
   text-align: center;
@@ -128,7 +125,8 @@ button {
 }
 #bot {
   height: 40px;
-  margin: 0 -8px 0 -8px;
+  margin-left: -8px;
+  margin-right: -8px;
   background: #e8e5e5;
   padding: 3%;
 }
@@ -138,16 +136,6 @@ button {
 }
 .link {
   height: 40px;
-}
-@media screen and (max-width: 1130px) {
-  #image {
-    max-width: 100%;
-    margin: 0 -8px 0px -8px;
-  }
-  #info {
-    width: 80%;
-    margin: 50px 50px 30px 50px;
-  }
 }
 @media screen and (max-width: 1000px) {
   nav a {
@@ -159,16 +147,31 @@ button {
   .bot-title {
     font-size: 25px;
   }
+  #all-collections {
+    display: inline;
+  }
+  .col-123 {
+    width: 50%;
+    margin: auto;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  .mini-logo-col {
+    width: 13%;
+  }
+  .example-col {
+    width: 70%;
+  }
 }
 @media screen and (max-width: 700px) {
   header {
     height: 50px;
   }
-  nav {
-    margin-right: 6%;
-  }
   nav a {
     font-size: 10px;
+  }
+  nav {
+    margin-right: 6%;
   }
   #shop {
     display: none;
@@ -176,11 +179,10 @@ button {
   #cart {
     height: 30%;
   }
-  button {
-    height: 35px;
+  .col-123 {
+    width: 70%;
   }
   .bot-title {
     font-size: 15px;
   }
 }
-/*# sourceMappingURL=collection2.component.css.map */
