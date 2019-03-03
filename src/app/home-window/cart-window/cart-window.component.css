@@ -2,9 +2,10 @@ html {
   margin: -8px;
   font-family: 'Helvetica';
   letter-spacing: 3px;
+  background-color: #ffffff;
 }
 header {
-  height: 80px;
+  height: 70px;
   margin: 0px -8px 0px -8px;
   padding: 10px 5px;
   background: #65195d;
@@ -16,66 +17,44 @@ header nav {
   display: inline-block;
 }
 header img {
-  height: 98%;
+  height: 100%;
   margin-right: 5%;
+  margin-left: 5%;
 }
 
 header::after {
-  content: '';
   display: inline-block;
   width: 100%;
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-
   letter-spacing: 2px;
 }
 nav {
-  margin-right: 12%;
+  margin-right: 10%;
 }
 nav a {
   font-weight: bold;
   font-size: 20px;
-  margin-right: 15%;
+  padding-right: 8%;
   text-transform: uppercase;
   color: #fff;
   text-decoration: none;
 }
-header a {
-
-}
 nav a:hover {
   color: #5b5b5b;
 }
-#hello {
-  text-decoration: none;
-}
-#hello:visited {
-  text-decoration: none;
-  color: white;
-}
-#hello:hover {
-  color: #989898;
-}
-#main-title {
-  margin-left: 5%;
-}
 #cart {
-  height: 45px;
-  margin-left: 3%;
+  height: 35%;
 }
 #cart:hover {
-  height: 47px;
+  height: 45%;
 }
-#hello {
-  text-transform: uppercase;
-  margin-left: 40px;
-}
+
 #cart-form {
-  position: relative;
   background: #ffffff;
   margin: 0 auto;
-  width: 90vh;
+  width: 60%;
   margin-top: 3%;
   margin-bottom: 3%;
   padding: 3% 5% 3% 5%;
@@ -104,10 +83,16 @@ nav a:hover {
   font-size: 20px;
   font-weight: bold;
 }
-.total {
+#total-info, #total-button {
   display: inline-block;
   vertical-align: middle;
-  margin-right: 20vh;
+}
+#total-info {
+  width: 35%;
+  margin-right: 10%;
+}
+#total-button {
+
 }
 button {
   background-color: #c3c3c3;
@@ -122,10 +107,7 @@ button {
 .delete {
   vertical-align: bottom;
   margin-right: 8%;
-  margin-top: 10%;
-}
-.bot-pic {
-  margin: 90px -8px 0px -8px;
+  margin-top: 8%;
 }
 #bot-title-1 {
   padding: 10% 0 0 0;
@@ -144,68 +126,73 @@ button {
   background-image: url("../pic/bot-pic.png");
   margin-left: -8px;
   margin-right: -8px;
-  background-size: 100%;
+  background-size: 110%;
   align-items: center;
   text-align: center;
-  height: 30%;
+  height: 35%;
 }
 #bot {
-  height: 50px;
+  height: 40px;
   margin-left: -8px;
   margin-right: -8px;
   background: #e8e5e5;
-  text-align: justify;
-  padding: 50px;
+  padding: 3%;
 }
-#soc-1 {
-  margin-left: 100px;
-}
-#soc-1, #soc-2, #soc-3, #soc-4 {
-  margin-right: 30px;
-}
-#social  {
+.soc {
+  margin-right: 5%;
   display: inline-block;
 }
+.link {
+  height: 40px;
+}
 @media screen and (max-width: 1000px) {
-  #hello {
-    margin-left: 5%;
+  #cart-form {
+    width: 70%;
+  }
+  .delete {
+    margin-top: 6%;
+  }
+  nav a {
     font-size: 15px;
   }
   #cart {
     height: 35px;
   }
-  #all-collections {
-    display: inline;
-  }
-  .col-123 {
-    width: 50%;
-    margin: auto;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-  }
-  .mini-logo-col {
-    width: 13%
-  }
-  .example-col {
-    width: 70%
-  }
   .bot-title
   {
     font-size: 25px;
   }
-  nav a {
-    font-size: 15px;
-  }
 }
 @media screen and (max-width: 700px) {
-  #hello {
+  #cart-form {
+    width: 80%;
+  }
+  header {
+    height: 50px;
+  }
+  nav a {
+    font-size: 10px;
+  }
+  nav {
+    margin-right: 6%;
+  }
+  #shop {
     display: none;
   }
   #cart {
     height: 30%;
   }
-  .bot-title
-  {
+  button {
+    height: 35px;
+    width: 150px;
+  }
+  .bot-title {
     font-size: 15px;
   }
 }
+  @media screen and (max-width: 590px) {
+    #total-info {
+      width: 70%;
+    }
+  }
+

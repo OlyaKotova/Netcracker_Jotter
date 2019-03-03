@@ -7,7 +7,7 @@ import { AuthenticationService } from '../services';
 @Component({
   selector: 'app-home-window',
   templateUrl: './home-window.component.html',
-  styleUrls: ['./home-window.component.less']
+  styleUrls: ['./home-window.component.css']
 })
 export class HomeWindowComponent implements OnInit {
 
@@ -22,15 +22,9 @@ export class HomeWindowComponent implements OnInit {
       this.currentUser = JSON.parse(this.cookieService.get('currentUser'));
     }
   }
-
   ngOnInit() {
   }
-
   logout() {
     this.authenticationService.logout();
   }
-  refresh() {
-    window.location.reload();
-  }
-
 }

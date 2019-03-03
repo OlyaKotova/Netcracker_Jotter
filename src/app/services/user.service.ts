@@ -15,6 +15,7 @@ export class UserService {
   constructor(private cookieService: CookieService) {  }
 
   register(user: User) {
+    console.log(user);
     Backendless.Data.of('UserList').save(user);
     let listUser = [];
     if (this.cookieService.get('users')) {

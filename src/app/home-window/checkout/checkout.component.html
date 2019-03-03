@@ -15,69 +15,68 @@
   <img id="cart" *ngIf="currentUser" src="assets/home/cart.png" alt="cart" [routerLink]="['/cart']">
 </header>
 <div id="check-form">
-
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-  <div id="main-form">
-    <div id="form-1">
-      <input class="form-field" type="text" required placeholder="Full Name" formControlName="fullName"
-             [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }"/>
-      <div *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
-        <div class="required" *ngIf="f.fullName.errors.required">Required to fill</div>
-        <div class="required" *ngIf="f.fullName.errors.pattern">Only letters!</div>
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div id="main-form">
+      <div id="form-1">
+        <input class="form-field" type="text" required placeholder="Full Name" formControlName="fullName"
+               [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }"/>
+        <div *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
+          <div class="required" *ngIf="f.fullName.errors.required">Required to fill</div>
+          <div class="required" *ngIf="f.fullName.errors.pattern">Only letters!</div>
+        </div>
+        <input class="form-field" type="text" placeholder="Email" formControlName="email"
+               [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div class="required" *ngIf="f.email.errors.required">Required to fill</div>
+          <div class="required" *ngIf="f.email.errors.email">example@example.com</div>
+        </div>
+        <input class="form-field" id="zip" type="text" placeholder="Zip" formControlName="zip"
+               [ngClass]="{ 'is-invalid': submitted && f.zip.errors }"/>
+        <div *ngIf="submitted && f.zip.errors" class="invalid-feedback">
+          <div class="required" *ngIf="f.zip.errors.required">Required to fill</div>
+          <div class="required" *ngIf="f.zip.errors.minlength">6 characters!</div>
+          <div class="required" *ngIf="f.zip.errors.maxlength">6 characters!</div>
+          <div class="required" *ngIf="f.zip.errors.pattern">Only number!</div>
+        </div>
+        <input class="form-field" type="text" placeholder="Address">
       </div>
-      <input class="form-field" type="text" placeholder="Email" formControlName="email"
-             [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
-      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-        <div class="required" *ngIf="f.email.errors.required">Required to fill</div>
-        <div class="required" *ngIf="f.email.errors.email">example@example.com</div>
+      <div id="form-2">
+        <input class="form-field" type="text" placeholder="Name on Card" formControlName="nameCard"
+               [ngClass]="{ 'is-invalid': submitted && f.nameCard.errors }"/>
+        <div *ngIf="submitted && f.nameCard.errors" class="invalid-feedback">
+          <div class="required" *ngIf="f.nameCard.errors.required">Required to fill</div>
+          <div class="required" *ngIf="f.nameCard.errors.pattern">Only letters!</div>
+        </div>
+        <input class="form-field" type="text" placeholder="Credit Card number" formControlName="card"
+               [ngClass]="{ 'is-invalid': submitted && f.card.errors }"/>
+        <div *ngIf="submitted && f.card.errors" class="invalid-feedback">
+          <div class="required" *ngIf="f.card.errors.required">Required to fill</div>
+          <div class="required" *ngIf="f.card.errors.minlength">16 characters!</div>
+          <div class="required" *ngIf="f.card.errors.maxlength">16 characters!</div>
+          <div class="required" *ngIf="f.card.errors.pattern">Only number!</div>
+        </div>
+        <input class="form-field" type="text" placeholder="Exp Month/Exp Year" formControlName="monthYear"
+               [ngClass]="{ 'is-invalid': submitted && f.monthYear.errors }"/>
+        <div *ngIf="submitted && f.monthYear.errors" class="invalid-feedback">
+          <div class="required" *ngIf="f.monthYear.errors.required">Required to fill</div>
+          <div class="required" *ngIf="f.monthYear.errors.pattern">Must be 03/19</div>
+        </div>
+        <input class="form-field" type="text" placeholder="CVV" formControlName="cvv"
+               [ngClass]="{ 'is-invalid': submitted && f.cvv.errors }"/>
+        <div *ngIf="submitted && f.cvv.errors" class="invalid-feedback">
+          <div class="required" *ngIf="f.cvv.errors.required">Required to fill</div>
+          <div class="required" *ngIf="f.cvv.errors.minlength">3 characters!</div>
+          <div class="required" *ngIf="f.cvv.errors.maxlength">3 characters!</div>
+        </div>
       </div>
-      <input class="form-field" id="zip" type="text" placeholder="Zip" formControlName="zip"
-             [ngClass]="{ 'is-invalid': submitted && f.zip.errors }"/>
-      <div *ngIf="submitted && f.zip.errors" class="invalid-feedback">
-        <div class="required" *ngIf="f.zip.errors.required">Required to fill</div>
-        <div class="required" *ngIf="f.zip.errors.minlength">6 characters!</div>
-        <div class="required" *ngIf="f.zip.errors.maxlength">6 characters!</div>
-        <div class="required" *ngIf="f.zip.errors.pattern">Only number!</div>
-      </div>
-      <input class="form-field" type="text" placeholder="Address">
     </div>
-    <div id="form-2">
-      <input class="form-field" type="text" placeholder="Name on Card"formControlName="nameCard"
-             [ngClass]="{ 'is-invalid': submitted && f.nameCard.errors }"/>
-      <div *ngIf="submitted && f.nameCard.errors" class="invalid-feedback">
-        <div class="required" *ngIf="f.nameCard.errors.required">Required to fill</div>
-        <div class="required" *ngIf="f.nameCard.errors.pattern">Only letters!</div>
-      </div>
-      <input class="form-field" type="text" placeholder="Credit Card number" formControlName="card"
-             [ngClass]="{ 'is-invalid': submitted && f.card.errors }"/>
-      <div *ngIf="submitted && f.card.errors" class="invalid-feedback">
-        <div class="required" *ngIf="f.card.errors.required">Required to fill</div>
-        <div class="required" *ngIf="f.card.errors.minlength">16 characters!</div>
-        <div class="required" *ngIf="f.card.errors.maxlength">16 characters!</div>
-        <div class="required" *ngIf="f.card.errors.pattern">Only number!</div>
-      </div>
-      <input class="form-field" type="text" placeholder="Exp Month/Exp Year" formControlName="monthYear"
-             [ngClass]="{ 'is-invalid': submitted && f.monthYear.errors }"/>
-      <div *ngIf="submitted && f.monthYear.errors" class="invalid-feedback">
-        <div class="required" *ngIf="f.monthYear.errors.required">Required to fill</div>
-        <div class="required" *ngIf="f.monthYear.errors.pattern">Must be 03/19</div>
-      </div>
-      <input class="form-field" type="text" placeholder="CVV" formControlName="cvv"
-             [ngClass]="{ 'is-invalid': submitted && f.cvv.errors }"/>
-      <div *ngIf="submitted && f.cvv.errors" class="invalid-feedback">
-        <div class="required" *ngIf="f.cvv.errors.required">Required to fill</div>
-        <div class="required" *ngIf="f.cvv.errors.minlength">3 characters!</div>
-        <div class="required" *ngIf="f.cvv.errors.maxlength">3 characters!</div>
-      </div>
+    <div id="total">
+      <h5>Sub-total: ${{subTotal}}</h5>
+      <h5>Delivery: FREE</h5>
+      <button type="submit">CHECKOUT</button>
+      <div id="message">{{message}}</div>
     </div>
-  </div>
-  <div id="total">
-    <h5>Sub-total: ${{subTotal}}</h5>
-    <h5>Delivery: FREE</h5>
-    <button type="submit">CHECKOUT</button>
-    <div id="message">{{message}}</div>
-  </div>
-</form>
+  </form>
 </div>
 <div class="bot-pic-title">
   <h1 class="bot-title" id="bot-title-1">For every planner purchased, </h1>
@@ -86,7 +85,7 @@
 <div id="bot">
   <div id="social">
     <a href="https://gmail.com" class="soc"><img class="link" src="assets/home/gmail.png" alt="gmail"></a>
-    <a href="https://www.facebook.com/"class="soc"><img class="link" src="assets/home/facebook.png" alt="facebook"></a>
+    <a href="https://www.facebook.com/" class="soc"><img class="link" src="assets/home/facebook.png" alt="facebook"></a>
     <a href="https://instagram.com" class="soc"><img class="link" src="assets/home/instagram.png" alt="instagram"></a>
     <a href="https://twitter.com" class="soc"><img class="link" src="assets/home/twitter.png" alt="twitter"></a>
   </div>

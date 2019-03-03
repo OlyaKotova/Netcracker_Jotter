@@ -19,24 +19,6 @@ export class LoginWindowComponent implements OnInit {
   clickMessage = '';
   user: string;
   pass: string;
-  foundUser: {
-    firstName: string,
-    lastName: string,
-    password: string,
-    username: string,
-  };
-  fieldOfUser: [{
-    firstName: string,
-    lastName: string,
-    password: string,
-    username: string,
-  }];
-  fieldOfPass: [{
-    firstName: string,
-    lastName: string,
-    password: string,
-    username: string,
-  }];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -70,17 +52,12 @@ export class LoginWindowComponent implements OnInit {
     const queryBuilderUser = Backendless.DataQueryBuilder.create().setWhereClause(this.user);
     const queryBuilderPass = Backendless.DataQueryBuilder.create().setWhereClause(this.pass);
 
-    this.fieldOfUser = Backendless.Data.of( 'UserList').findSync(queryBuilderUser);
-    this.fieldOfPass = Backendless.Data.of( 'UserList').findSync(queryBuilderPass);
-    if (this.fieldOfUser[0].password === this.fieldOfPass[0].password) {
-      this.foundUser.firstName = this.fieldOfUser[0].firstName;
-      this.foundUser.lastName = this.fieldOfUser[0].lastName;
-      this.foundUser.password = this.fieldOfUser[0].password;
-      this.foundUser.username = this.fieldOfUser[0].username;
-      console.log(this.foundUser);
-      Backendless.Data.of('CurrUser').save(this.foundUser);
-    }
-
+    const fieldOfUser = Backendless.Data.of( 'UserList').findSync(queryBuilderUser);
+    const fieldOfPass = Backendless.Data.of( 'UserList').findSync(queryBuilderPass);
+    const foundUser = fieldOfUser;
+    console.log(foundUser[0]);
+    console.log(fieldOfUser[0]);
+    Backendless.Data.of('CurrUser').save(foundUser);
 
     if (this.cookieService.get('users')) {
       const listUser = JSON.parse(this.cookieService.get('users'));

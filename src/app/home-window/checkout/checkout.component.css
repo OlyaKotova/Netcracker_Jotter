@@ -50,9 +50,11 @@ nav a:hover {
 #cart:hover {
   height: 45%;
 }
+
+
 #check-form{
-  margin: 7% auto;
-  width: 55%;
+  margin: 9% auto;
+  width: 70%;
   background-color: #ffffff;
 }
 #form-1,#form-2 {
@@ -76,13 +78,7 @@ nav a:hover {
   border: 0;
   background-color: #ececec;
 }
-.form-field-mini {
-  width: 28%;
-  padding: 3%;
-  margin: 6% 4% 0 4%;
-  border: 0;
-  background-color: #ececec;
-}
+
 button {
   background-color: #dbdbdb;
   border: 0;
@@ -106,6 +102,8 @@ button {
   margin-top: 25px;
   text-transform: uppercase;
 }
+
+
 .bot-pic {
   margin: 90px -8px 0px -8px;
 }
@@ -126,17 +124,17 @@ button {
   background-image: url("../pic/bot-pic.png");
   margin-left: -8px;
   margin-right: -8px;
-  background-size: 100%;
+  background-size: 110%;
   align-items: center;
   text-align: center;
-  height: 30%;
+  height: 35%;
 }
 #bot {
-  height: 50px;
+  height: 40px;
   margin-left: -8px;
   margin-right: -8px;
   background: #e8e5e5;
-  padding: 5%;
+  padding: 3%;
 }
 .soc {
   margin-right: 5%;
@@ -145,36 +143,30 @@ button {
 .link {
   height: 40px;
 }
-
-@media screen and (max-width: 1000px) {
-  #hello {
-    margin-left: 5%;
+@media screen and (max-width: 1450px) {
+  #check-form {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1130px) {
+  nav a {
     font-size: 15px;
   }
   #cart {
     height: 35px;
   }
-  #all-collections {
-    display: inline;
-  }
-  .col-123 {
-    width: 50%;
-    margin: auto;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-  }
-  .mini-logo-col {
-    width: 13%
-  }
-  .example-col {
-    width: 70%
+  #main-form, #total {
+    width: 100%;
+    margin-left: 5%;
   }
   .bot-title
   {
     font-size: 25px;
   }
-  nav a {
-    font-size: 15px;
+}
+@media screen and (max-width: 895px) {
+  #main-form, #total {
+    margin-left: 20%;
   }
 }
 @media screen and (max-width: 700px) {
@@ -193,9 +185,14 @@ button {
   #cart {
     height: 30%;
   }
+  #form-1,#form-2 {
+    width: 60%;
+  }
+  .form-field {
+    width: 90%;
+  }
   .bot-title
   {
     font-size: 15px;
   }
-
 }

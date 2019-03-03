@@ -7,12 +7,12 @@
 <header>
   <img id="main-title" src="assets/home/logo.png" alt="logo" [routerLink]="['/home']">
   <nav id="menu">
-    <a href="#ex1">Shop</a>
-    <a >Help</a>
-    <a *ngIf="currentUser" (click)=logout() (click)="refresh()" [routerLink]="['/home']">Logout</a>
+    <a id="shop" href="#ex1">Shop</a>
+    <a>Help</a>
+    <a *ngIf="currentUser" (click)=logout() [routerLink]="['/home']">Logout</a>
     <a *ngIf="!currentUser" [routerLink]="['/login']">Login</a>
+    <a *ngIf="currentUser" [routerLink]="['/user']">Profile</a>
   </nav>
-  <a id="hello" *ngIf="currentUser" [routerLink]="['/user']">Hi, {{currentUser.firstName}}!</a>
   <img id="cart" *ngIf="currentUser" src="assets/home/cart.png" alt="cart" [routerLink]="['/cart']">
 </header>
 <div id="profile">
@@ -24,19 +24,17 @@
     <h4>Current Cart:  {{subTotal}}$</h4>
   </div>
 </div>
-<section id="ex2">
-  <div class="bot-pic-title">
-    <h1 class="bot-title" id="bot-title-1">For every planner purchased, </h1>
-    <h1 class="bot-title" id="bot-title-2">we give one to someone in need</h1>
+<div class="bot-pic-title">
+  <h1 class="bot-title" id="bot-title-1">For every planner purchased, </h1>
+  <h1 class="bot-title" id="bot-title-2">we give one to someone in need</h1>
+</div>
+<div id="bot">
+  <div id="social">
+    <a href="https://gmail.com" class="soc"><img class="link" src="assets/home/gmail.png" alt="gmail"></a>
+    <a href="https://www.facebook.com/" class="soc"><img class="link" src="assets/home/facebook.png" alt="facebook"></a>
+    <a href="https://instagram.com" class="soc"><img class="link" src="assets/home/instagram.png" alt="instagram"></a>
+    <a href="https://twitter.com" class="soc"><img class="link" src="assets/home/twitter.png" alt="twitter"></a>
   </div>
-  <div id="bot">
-    <div id="social">
-      <a href="https://gmail.com" id="soc-1"><img src="assets/home/gmail.png" width="50" height="50" alt="gmail"></a>
-      <a href="https://www.facebook.com/" id="soc-2"><img src="assets/home/facebook.png"  width="50" height="50" alt="facebook"></a>
-      <a href="https://instagram.com" id="soc-3"><img src="assets/home/instagram.png" width="50" height="50" alt="instagram"></a>
-      <a href="https://twitter.com" id="soc-4"><img src="assets/home/twitter.png" width="50" height="50" alt="twitter"></a>
-    </div>
-  </div>
-</section>
+</div>
 </body>
 </html>

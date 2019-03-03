@@ -2,66 +2,41 @@ html {
   margin: -8px;
   font-family: 'Helvetica';
   letter-spacing: 3px;
+  background-color: #ffffff;
 }
 header {
-  height: 80px;
+  height: 70px;
   margin: 0px -8px 0px -8px;
   padding: 10px 5px;
   background: #65195d;
   color: #fff;
 }
-header img {
-  vertical-align: middle;
-  display: inline-block;
-  height: 98%;
-  margin-right: 5%;
-}
+header img,
 header nav {
   vertical-align: middle;
   display: inline-block;
 }
+header img {
+  height: 100%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
 header::after {
-  content: '';
   display: inline-block;
   width: 100%;
 }
-h1 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-h2 {
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-h3 {
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-h4 {
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-h5 {
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-h6 {
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 nav {
-  margin-right: 12%;
+  margin-right: 10%;
 }
 nav a {
   font-weight: bold;
   font-size: 20px;
-  margin-right: 15%;
+  padding-right: 8%;
   text-transform: uppercase;
   color: #fff;
   text-decoration: none;
@@ -69,27 +44,11 @@ nav a {
 nav a:hover {
   color: #5b5b5b;
 }
-#hello {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: white;
-}
-#hello:visited {
-  text-decoration: none;
-  color: white;
-}
-#hello:hover {
-  color: #989898;
-}
-#main-title {
-  margin-left: 5%;
-}
 #cart {
-  height: 45px;
-  margin-left: 3%;
+  height: 35%;
 }
 #cart:hover {
-  height: 47px;
+  height: 45%;
 }
 #main-pic {
   margin: 0px -8px 0px -8px;
@@ -138,9 +97,6 @@ nav a:hover {
 .example-col {
   margin: 10px 10px;
 }
-.bot-pic {
-  margin: 90px -8px 0px -8px;
-}
 #bot-title-1 {
   padding: 10% 0 0 0;
   margin-bottom: 3%;
@@ -158,48 +114,35 @@ nav a:hover {
   background-image: url("pic/bot-pic.png");
   margin-left: -8px;
   margin-right: -8px;
-  background-size: 100%;
+  background-size: 110%;
   align-items: center;
   text-align: center;
-  height: 30%;
+  height: 35%;
 }
 #bot {
-  height: 50px;
+  height: 40px;
   margin-left: -8px;
   margin-right: -8px;
   background: #e8e5e5;
-  text-align: justify;
-  padding: 50px;
+  padding: 3%;
 }
-#soc-1 {
-  margin-left: 100px;
-  margin-right: 30px;
-}
-#soc-2 {
-  margin-right: 30px;
-}
-#soc-3 {
-  margin-right: 30px;
-}
-#soc-4 {
-  margin-right: 30px;
-}
-#social {
+.soc {
+  margin-right: 5%;
   display: inline-block;
 }
-#subscribe {
-  display: inline-block;
-}
-#button {
-  display: inline-block;
+.link {
+  height: 40px;
 }
 @media screen and (max-width: 1000px) {
-  #hello {
-    margin-left: 5%;
+  nav a {
     font-size: 15px;
   }
   #cart {
     height: 35px;
+  }
+  .bot-title
+  {
+    font-size: 25px;
   }
   #all-collections {
     display: inline;
@@ -216,22 +159,27 @@ nav a:hover {
   .example-col {
     width: 70%;
   }
-  .bot-title {
-    font-size: 25px;
-  }
-  nav a {
-    font-size: 15px;
-  }
 }
 @media screen and (max-width: 700px) {
-  #hello {
+  header {
+    height: 50px;
+  }
+  nav a {
+    font-size: 10px;
+  }
+  nav {
+    margin-right: 6%;
+  }
+  #shop {
     display: none;
   }
   #cart {
     height: 30%;
   }
+  .col-123 {
+    width: 70%;
+  }
   .bot-title {
     font-size: 15px;
   }
 }
-/*# sourceMappingURL=home-window.component.css.map */
