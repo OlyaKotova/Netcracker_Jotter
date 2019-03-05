@@ -13,6 +13,7 @@ export class HomeWindowComponent implements OnInit {
 
   currentUser: User;
   users: User[] = [];
+  subTotal: number;
 
   constructor(
     private userService: UserService,
@@ -20,6 +21,9 @@ export class HomeWindowComponent implements OnInit {
     private authenticationService: AuthenticationService) {
     if (this.cookieService.get('currentUser')) {
       this.currentUser = JSON.parse(this.cookieService.get('currentUser'));
+    }
+    if (this.cookieService.get('subTotal')) {
+      this.subTotal = JSON.parse(this.cookieService.get('subTotal'));
     }
   }
   ngOnInit() {

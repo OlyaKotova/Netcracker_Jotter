@@ -5,12 +5,6 @@
 @font_family_1: 'Helvetica';
 @background_color_1: #ffffff;
 
-html {
-  margin: -8px;
-  font-family: @font_family_1;
-  letter-spacing: 3px;
-  background-color: @background_color_1;
-}
 header {
   height: 70px;
   margin: 0px -8px 0px -8px;
@@ -71,10 +65,13 @@ nav {
     }
   }
 }
-#cart {
-  height: 35%;
+#menu {
+
+}
+.cart {
+  max-height: 40%;
   &:hover {
-    height: 45%;
+    max-height: 45%;
   }
 }
 #main-pic {
@@ -168,9 +165,6 @@ nav {
       font-size: 15px;
     }
   }
-  #cart {
-    height: 35px;
-  }
   .bot-title {
     font-size: 25px;
   }
@@ -202,9 +196,6 @@ nav {
   }
   #shop {
     display: none;
-  }
-  #cart {
-    height: 30%;
   }
   .col-123 {
     width: 70%;

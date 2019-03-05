@@ -5,13 +5,8 @@
 @font_family_1: 'Helvetica';
 @background_color_1: #ffffff;
 @background_color_2: #c3c3c3;
+@background_color_3: #d7d7d7;
 
-html {
-  margin: -8px;
-  font-family: @font_family_1;
-  letter-spacing: 3px;
-  background-color: @background_color_1;
-}
 header {
   height: 70px;
   margin: -2px -8px 0px -8px;
@@ -59,11 +54,11 @@ h6 {
   letter-spacing: 2px;
 }
 nav {
-  margin-right: 10%;
+  margin-right: 15%;
   a {
     font-weight: bold;
     font-size: 20px;
-    padding-right: 8%;
+    padding-right: 25%;
     text-transform: uppercase;
     color: @color_1;
     text-decoration: none;
@@ -72,10 +67,10 @@ nav {
     }
   }
 }
-#cart {
-  height: 35%;
+.cart {
+  max-height: 40%;
   &:hover {
-    height: 45%;
+    max-height: 45%;
   }
 }
 #image {
@@ -112,6 +107,9 @@ button {
   letter-spacing: 3px;
   font-size: 15px;
   font-weight: bold;
+}
+button:hover {
+  background-color: @background_color_3;
 }
 #bot-title-1 {
   padding: 10% 0 0 0;
@@ -163,9 +161,6 @@ button {
       font-size: 15px;
     }
   }
-  #cart {
-    height: 35px;
-  }
   .bot-title {
     font-size: 25px;
   }
@@ -182,9 +177,6 @@ button {
   }
   #shop {
     display: none;
-  }
-  #cart {
-    height: 30%;
   }
   button {
     height: 35px;

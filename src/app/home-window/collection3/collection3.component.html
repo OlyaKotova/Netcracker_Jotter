@@ -1,18 +1,14 @@
-<html>
-<head>
-  <title>Jotter</title>
-</head>
-<body>
 <header>
   <img id="main-title" src="assets/home/logo.png" alt="logo" [routerLink]="['/home']">
   <nav id="menu">
     <a id="shop" href="#ex1">Shop</a>
-
     <a *ngIf="currentUser" (click)=logout() [routerLink]="['/home']">Logout</a>
     <a *ngIf="!currentUser" [routerLink]="['/login']">Login</a>
     <a *ngIf="currentUser" [routerLink]="['/user']">Profile</a>
   </nav>
-  <img id="cart" *ngIf="currentUser" src="assets/home/cart.png" alt="cart" [routerLink]="['/cart']">
+  <div *ngIf="currentUser && !subTotal; then thenSrc else elseSrc"></div>
+  <ng-template #thenSrc><img class="cart" src="assets/home/cart.png" alt="cart" [routerLink]="['/cart']"></ng-template>
+  <ng-template #elseSrc><img class="cart" src="assets/home/cart-full.png" alt="cart" [routerLink]="['/cart']"></ng-template>
 </header>
 <section>
   <img id="image" src="assets/collection/col-3-example.png" alt="col-1">
@@ -37,5 +33,3 @@
     <a href="https://twitter.com" class="soc"><img class="link" src="assets/home/twitter.png" alt="twitter"></a>
   </div>
 </div>
-</body>
-</html>

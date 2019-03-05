@@ -12,7 +12,7 @@ export class InfoUserComponent implements OnInit {
 
   currentUser: User;
   users: User[] = [];
-  subTotal = this.cookieService.get('subTotal');
+  subTotal: number;
 
   constructor(
     private userService: UserService,
@@ -21,6 +21,9 @@ export class InfoUserComponent implements OnInit {
     window.scrollTo(0, 0);
     if (this.cookieService.get('currentUser')) {
       this.currentUser = JSON.parse(this.cookieService.get('currentUser'));
+    }
+    if (this.cookieService.get('subTotal')) {
+      this.subTotal = JSON.parse(this.cookieService.get('subTotal'));
     }
   }
 

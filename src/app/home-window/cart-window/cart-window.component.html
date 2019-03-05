@@ -1,8 +1,3 @@
-<html>
-<head>
-  <title>Jotter</title>
-</head>
-<body>
 <header>
   <img id="main-title" src="assets/home/logo.png" alt="logo" [routerLink]="['/home']">
   <nav id="menu">
@@ -11,9 +6,10 @@
     <a *ngIf="!currentUser" [routerLink]="['/login']">Login</a>
     <a *ngIf="currentUser" [routerLink]="['/user']">Profile</a>
   </nav>
-  <img id="cart" *ngIf="currentUser" src="assets/home/cart.png" alt="cart" [routerLink]="['/cart']">
+  <div *ngIf="currentUser && !subTotal; then thenSrc else elseSrc"></div>
+  <ng-template #thenSrc><img class="cart" src="assets/home/cart.png" alt="cart" [routerLink]="['/cart']"></ng-template>
+  <ng-template #elseSrc><img class="cart" src="assets/home/cart-full.png" alt="cart" [routerLink]="['/cart']"></ng-template>
 </header>
-
 <div id="cart-form">
   <a class="headline">My Cart</a>
   <div id="col-1" *ngIf="!((this.currCart).indexOf(1) == -1)">
@@ -50,7 +46,7 @@
       <h5>Sub-total: ${{subTotal}}</h5>
       <h5>Delivery: FREE</h5>
     </div>
-    <button id = "total-button" (click)="check(subTotal)" [routerLink]="['/check']">CHECKOUT</button>
+    <button id = "total-button" (click)="check()" [routerLink]="['/check']">CHECKOUT</button>
   </div>
 </div>
 <div class="bot-pic-title">
@@ -65,5 +61,3 @@
     <a href="https://twitter.com" class="soc"><img class="link" src="assets/home/twitter.png" alt="twitter"></a>
   </div>
 </div>
-</body>
-</html>

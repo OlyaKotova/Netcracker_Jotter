@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  margin: -8px;
+  font-family: 'Helvetica';
+  letter-spacing: 3px;
+  background-color: #ffffff;
+}
