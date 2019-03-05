@@ -7,26 +7,47 @@
 @background_color_2: #c3c3c3;
 @background_color_3: #d7d7d7;
 
-header {
-  height: 70px;
-  margin: -2px -8px 0px -8px;
-  padding: 10px 5px;
-  background: #65195d;
-  color: @color_1;
-  img {
-    vertical-align: middle;
-    display: inline-block;
-    height: 100%;
-    margin-right: 5%;
-    margin-left: 5%;
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 3fr 1fr;
+  grid-template-rows: 90px;
+  background-color: @color_3;
+  margin: 0 -8px 0 -8px;
+  .box {
+    display: grid;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: @color_1;
+    text-decoration: none;
+    &:hover {
+      color: @color_2;
+    }
   }
-  nav {
-    vertical-align: middle;
-    display: inline-block;
+  #logo {
+    height: 70%;
+    margin-left: 40%;
+    justify-content: center;
   }
-  &::after {
-    display: inline-block;
-    width: 100%;
+  .box-nav {
+    text-decoration: none;
+    justify-content: left;
+    color: @color_1;
+    &:hover {
+      color: @color_2;
+    }
+  }
+  .login-logout {
+    justify-content: right;
+    text-decoration: none;
+    color: @color_1;
+    &:hover {
+      color: @color_2;
+    }
+  }
+  #cart {
+    margin-left: 20%;
   }
 }
 h1 {
@@ -156,8 +177,9 @@ button:hover {
   }
 }
 @media screen and (max-width: 1000px) {
-  nav {
-    a {
+  .wrapper {
+    grid-template-rows: 70px;
+    .box {
       font-size: 15px;
     }
   }
@@ -166,14 +188,16 @@ button:hover {
   }
 }
 @media screen and (max-width: 700px) {
-  header {
-    height: 50px;
-  }
-  nav {
-    a {
-      font-size: 10px;
+  .wrapper {
+    #logo {
+      height: 60%;
+      margin-left: 20%;
     }
-    margin-right: 6%;
+    .box {
+      font-size: 9px;
+      margin-left: 10%;
+      justify-content: center;
+    }
   }
   #shop {
     display: none;

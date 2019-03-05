@@ -1,24 +1,45 @@
-header {
-  height: 70px;
-  margin: -2px -8px 0px -8px;
-  padding: 10px 5px;
-  background: #65195d;
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 3fr 1fr;
+  grid-template-rows: 90px;
+  background-color: #65195d;
+  margin: 0 -8px 0 -8px;
+}
+.wrapper .box {
+  display: grid;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+}
+.wrapper .box:hover {
+  color: #5b5b5b;
+}
+.wrapper #logo {
+  height: 70%;
+  margin-left: 40%;
+  justify-content: center;
+}
+.wrapper .box-nav {
+  text-decoration: none;
+  justify-content: left;
   color: #fff;
 }
-header img {
-  vertical-align: middle;
-  display: inline-block;
-  height: 100%;
-  margin-right: 5%;
-  margin-left: 5%;
+.wrapper .box-nav:hover {
+  color: #5b5b5b;
 }
-header nav {
-  vertical-align: middle;
-  display: inline-block;
+.wrapper .login-logout {
+  justify-content: right;
+  text-decoration: none;
+  color: #fff;
 }
-header::after {
-  display: inline-block;
-  width: 100%;
+.wrapper .login-logout:hover {
+  color: #5b5b5b;
+}
+.wrapper #cart {
+  margin-left: 20%;
 }
 h1 {
   font-weight: bold;
@@ -122,17 +143,29 @@ nav a:hover {
   }
 }
 @media screen and (max-width: 1000px) {
+  .wrapper {
+    grid-template-rows: 70px;
+  }
+  .wrapper .box {
+    font-size: 15px;
+  }
   #profile {
     width: 90%;
-  }
-  nav a {
-    font-size: 15px;
   }
   .bot-title {
     font-size: 25px;
   }
 }
 @media screen and (max-width: 700px) {
+  .wrapper #logo {
+    height: 60%;
+    margin-left: 20%;
+  }
+  .wrapper .box {
+    font-size: 9px;
+    margin-left: 10%;
+    justify-content: center;
+  }
   #photo {
     width: 70%;
     height: 70%;
@@ -141,15 +174,6 @@ nav a:hover {
   #info {
     margin-left: 15%;
     width: 70%;
-  }
-  header {
-    height: 50px;
-  }
-  nav {
-    margin-right: 6%;
-  }
-  nav a {
-    font-size: 10px;
   }
   #shop {
     display: none;

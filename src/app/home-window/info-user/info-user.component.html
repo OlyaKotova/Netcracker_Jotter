@@ -1,15 +1,23 @@
-<header>
-  <img id="main-title" src="assets/home/logo.png" alt="logo" [routerLink]="['/home']">
-  <nav id="menu">
-    <a id="shop" href="#ex1">Shop</a>
-    <a *ngIf="currentUser" [routerLink]="['/user']">Profile</a>
-    <a *ngIf="currentUser" (click)=logout() [routerLink]="['/home']">Logout</a>
-    <a *ngIf="!currentUser" [routerLink]="['/login']">Login</a>
-  </nav>
-  <div *ngIf="currentUser && !subTotal; then thenSrc else elseSrc"></div>
-  <ng-template #thenSrc><img class="cart" src="assets/home/cart.png" alt="cart" [routerLink]="['/cart']"></ng-template>
-  <ng-template #elseSrc><img class="cart" src="assets/home/cart-full.png" alt="cart" [routerLink]="['/cart']"></ng-template>
-</header>
+<div class="wrapper">
+  <div class="box">
+    <img id="logo" src="assets/home/logo.png" alt="logo" [routerLink]="['/home']">
+  </div>
+  <div class="box">
+    <a class="box-nav" href="#ex1">Shop</a>
+  </div>
+  <div class="box">
+    <a class="box-nav" *ngIf="currentUser" [routerLink]="['/user']">Profile</a>
+  </div>
+  <div class="box" id="cart">
+    <div *ngIf="currentUser && !subTotal; then thenSrc else elseSrc"></div>
+    <ng-template #thenSrc><img class="cart" src="assets/home/cart.png" alt="cart" [routerLink]="['/cart']"></ng-template>
+    <ng-template #elseSrc><img class="cart" src="assets/home/cart-full.png" alt="cart" [routerLink]="['/cart']"></ng-template>
+  </div>
+  <div class="box">
+    <a class="login-logout" *ngIf="currentUser" (click)=logout() [routerLink]="['/home']">Logout</a>
+    <a class="login-logout" *ngIf="!currentUser" [routerLink]="['/login']">Login</a>
+  </div>
+</div>
 <div id="profile">
   <img id="photo" src="assets/home/no_image.png" alt="photo">
   <div id="info">
