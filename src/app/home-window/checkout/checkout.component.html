@@ -2,10 +2,9 @@
   <img id="main-title" src="assets/home/logo.png" alt="logo" [routerLink]="['/home']">
   <nav id="menu">
     <a id="shop" href="#ex1">Shop</a>
-
+    <a *ngIf="currentUser" [routerLink]="['/user']">Profile</a>
     <a *ngIf="currentUser" (click)=logout() [routerLink]="['/home']">Logout</a>
     <a *ngIf="!currentUser" [routerLink]="['/login']">Login</a>
-    <a *ngIf="currentUser" [routerLink]="['/user']">Profile</a>
   </nav>
   <div *ngIf="currentUser && !subTotal; then thenSrc else elseSrc"></div>
   <ng-template #thenSrc><img class="cart" src="assets/home/cart.png" alt="cart" [routerLink]="['/cart']"></ng-template>
