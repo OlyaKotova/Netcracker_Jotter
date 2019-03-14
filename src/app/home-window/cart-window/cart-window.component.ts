@@ -53,6 +53,7 @@ export class CartWindowComponent implements OnInit {
   }
   logout() {
     this.authenticationService.logout();
+    location.reload();
   }
   delete(quantity) {
     if (quantity === 1) {

@@ -30,5 +30,6 @@ export class HomeWindowComponent implements OnInit {
   }
   logout() {
     this.authenticationService.logout();
+    location.reload();
   }
 }

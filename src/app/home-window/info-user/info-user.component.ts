@@ -31,9 +31,6 @@ export class InfoUserComponent implements OnInit {
   }
   logout() {
     this.authenticationService.logout();
+    location.reload();
   }
-  refresh() {
-    window.location.reload();
-  }
-
 }

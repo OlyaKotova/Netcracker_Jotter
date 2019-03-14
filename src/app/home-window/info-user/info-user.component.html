@@ -24,7 +24,8 @@
     <h4>First Name:  {{currentUser.firstName}}</h4>
     <h4>Last Name:  {{currentUser.lastName}}</h4>
     <h4>Login:  {{currentUser.username}}</h4>
-    <h4>Current Cart:  {{subTotal}}$</h4>
+    <h4 *ngIf="subTotal">Current Cart:  {{subTotal}}$</h4>
+    <h4 *ngIf="!subTotal">Current Cart: empty</h4>
   </div>
 </div>
 <div class="bot-pic-title">

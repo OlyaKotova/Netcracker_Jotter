@@ -59,5 +59,6 @@ export class CheckoutComponent implements OnInit {
   }
   logout() {
     this.authenticationService.logout();
+    location.reload();
   }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../services';
 import { Router } from '@angular/router';
-import Backendless from 'backendless';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-registration-window',
@@ -12,11 +12,13 @@ import Backendless from 'backendless';
 export class RegistrationWindowComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
+  clickMessage = '';
 
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private cookieService: CookieService
   ) {
   }
 
@@ -31,6 +33,16 @@ export class RegistrationWindowComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
+    const currUsername = this.f.username.value;
+    if (this.cookieService.get('users')) {
+      const listUser = JSON.parse(this.cookieService.get('users'));
+      for (let i = 0; i < listUser.length; i++) {
+        if (currUsername === listUser[i]['username']) {
+          this.clickMessage = 'Oops! Looks like your login is already taken.';
+          return;
+        }
+      }
+    }
     this.submitted = true;
     if (this.registerForm.invalid) {
       return;

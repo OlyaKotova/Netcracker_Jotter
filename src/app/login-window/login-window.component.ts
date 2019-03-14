@@ -1,10 +1,10 @@
-import {Component, OnInit, ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthenticationService } from '../services';
 import Backendless from 'backendless';
-import {any} from 'codelyzer/util/function';
+
 
 @Component({
   selector: 'app-login-window',
@@ -19,6 +19,28 @@ export class LoginWindowComponent implements OnInit {
   clickMessage = '';
   user: string;
   pass: string;
+  foundUserByName = {
+    created: 0,
+    current: null,
+    firstName: '',
+    lastName: '',
+    objectId: '',
+    ownerId: null,
+    password: '',
+    updated: null,
+    username: ''
+  };
+  foundUserByPass = {
+    created: 0,
+    current: null,
+    firstName: '',
+    lastName: '',
+    objectId: '',
+    ownerId: null,
+    password: '',
+    updated: null,
+    username: ''
+  };
 
   constructor(
     private formBuilder: FormBuilder,
@@ -54,10 +76,15 @@ export class LoginWindowComponent implements OnInit {
 
     const fieldOfUser = Backendless.Data.of( 'UserList').findSync(queryBuilderUser);
     const fieldOfPass = Backendless.Data.of( 'UserList').findSync(queryBuilderPass);
-    const foundUser = fieldOfUser;
-    /*console.log(foundUser[0]);
-    console.log(fieldOfUser[0]);
-    Backendless.Data.of('CurrUser').save(foundUser);*/
+    for (const key in fieldOfUser[0]) {
+      this.foundUserByName[key] = fieldOfUser[0][key];
+    }
+    for (const key in fieldOfPass[0]) {
+      this.foundUserByPass[key] = fieldOfPass[0][key];
+    }
+    if (this.foundUserByName.username === this.foundUserByPass.username) {
+      console.log('Backendless success!');
+    }
 
     if (this.cookieService.get('users')) {
       const listUser = JSON.parse(this.cookieService.get('users'));

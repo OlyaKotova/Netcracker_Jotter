@@ -34,6 +34,7 @@ export class Collection3Component implements OnInit {
   }
   logout() {
     this.authenticationService.logout();
+    location.reload();
   }
 
   addToCart() {

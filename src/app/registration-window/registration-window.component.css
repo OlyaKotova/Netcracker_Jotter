@@ -37,6 +37,11 @@ a:visited {
   text-decoration: none;
   color: #924e8f;
 }
+#message {
+  margin-top: 7%;
+  letter-spacing: 1px;
+  text-align: center;
+}
 .field {
   margin-bottom: 4%;
 }
